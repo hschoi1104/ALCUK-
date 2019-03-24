@@ -1,0 +1,7 @@
+﻿  ALCUK-PracticeCheker.cpp
+c:\users\최현석\documents\github\alcuk-practicechecker\alcuk-practicecheker\alcuk-practicecheker.cpp(86): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\최현석\documents\github\alcuk-practicechecker\alcuk-practicecheker\alcuk-practicecheker.cpp(92): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\최현석\documents\github\alcuk-practicechecker\alcuk-practicecheker\alcuk-practicecheker.cpp(146): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\최현석\documents\github\alcuk-practicechecker\alcuk-practicecheker\alcuk-practicecheker.cpp(150): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\최현석\documents\github\alcuk-practicechecker\alcuk-practicecheker\alcuk-practicecheker.cpp(154): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  ALCUK-PracticeCheker.vcxproj -> C:\Users\최현석\Documents\GitHub\ALCUK-PracticeChecker\ALCUK-PracticeCheker\Debug\ALCUK-PracticeCheker.exe

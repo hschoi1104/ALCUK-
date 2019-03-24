@@ -43,7 +43,7 @@ void initdata() {
 	m.insert({ "caindy" ,{"박도윤","시니어" } });
 	m.insert({ "kimdae963" ,{"김대희","시니어" } });
 	m.insert({ "fullmoon5110" ,{"이지윤","시니어" } });
-	m.insert({ "chan120317﻿" ,{"김혜수","시니어" } });
+	m.insert({ "chan120317" ,{"김혜수","시니어" } });
 	m.insert({ "rabbitmjh" ,{"민지홍","시니어" } });
 	m.insert({ "spdlqjqkqh" ,{"김진경","시니어" } });
 	m.insert({ "wldbs2043" ,{"김지윤","시니어" } });
