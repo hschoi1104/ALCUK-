@@ -3,14 +3,23 @@
 #include <vector>
 #include <string>
 using namespace std;
+struct node {
+	string name;
+	string ban;
+	bool chk;
+};
 vector<vector<string>> v;
 vector<string>senier;
+vector<string>senierfail;
 vector<string>senierbasic;
+vector<string>senierbasicfail;
 vector<string>junier;
+vector<string>junierfail;
 map<string, pair<string, string>>m;
 int probnum = 0;
 int people = 0;
 int seniercutline = 0, senierbasiccutline = 0, juniercutline = 0;
+int seniernum = 13, senierbasicnum=6, juniernum = 14;
 int t = 0;
 string s;
 void input() {
@@ -26,15 +35,17 @@ void input() {
 	probnum = s.length() - 10;
 }
 void initdata() {
-	m.insert({ "kimcoding" ,{"김정훈","시니어" } });
-	m.insert({ "gktgnjftm" ,{"이윤석","시니어" } });
-	m.insert({ "h0ng" ,{"조재홍","시니어" } });
-	m.insert({ "leethyun" ,{"이태현","시니어" } });
-	m.insert({ "antdkfa" ,{"백재상","시니어" } });
-	m.insert({ "hschoi1104" ,{"최현석","시니어" } });
-	m.insert({ "maum97" ,{"황수민","시니어" } });
-	m.insert({ "winterlood" ,{"이정환","시니어" } });
-	m.insert({ "gjdms611" ,{"허은지","시니어" } });
+	//시니어 심화 9
+	m.insert({ "kimcoding" ,node{"김정훈","시니어심화",false} });
+	m.insert({ "gktgnjftm" ,{"이윤석","시니어심화" } });
+	m.insert({ "h0ng" ,{"조재홍","시니어심화" } });
+	m.insert({ "leethyun" ,{"이태현","시니어심화" } });
+	m.insert({ "antdkfa" ,{"백재상","시니어심화" } });
+	m.insert({ "hschoi1104" ,{"최현석","시니어심화" } });
+	m.insert({ "maum97" ,{"황수민","시니어심화" } });
+	m.insert({ "winterlood" ,{"이정환","시니어심화" } });
+	m.insert({ "gjdms611" ,{"허은지","시니어심화" } });
+	//시니어 13
 	m.insert({ "cbj2741" ,{"김기헌","시니어" } });
 	m.insert({ "ip99202" ,{"한장희","시니어" } });
 	m.insert({ "vividswan" ,{"박수환","시니어" } });
@@ -47,15 +58,15 @@ void initdata() {
 	m.insert({ "rabbitmjh" ,{"민지홍","시니어" } });
 	m.insert({ "spdlqjqkqh" ,{"김진경","시니어" } });
 	m.insert({ "wldbs2043" ,{"김지윤","시니어" } });
-	m.insert({ "lejj0106" ,{"이은진","시니어기초" } });
-	m.insert({ "wldbs2043" ,{"김지윤","시니어" } });
 	m.insert({ "vegatrash" ,{"정래광","시니어" } });
+	//시니어 기초 6
+	m.insert({ "lejj0106" ,{"이은진","시니어기초" } });
 	m.insert({ "damin8" ,{"신다민","시니어기초" } });
 	m.insert({ "sg05138" ,{"김효빈","시니어기초" } });
 	m.insert({ "hi2yeoni" ,{"조희연","시니어기초" } });
 	m.insert({ "yoonfy4280" ,{"윤태수","시니어기초" } });
 	m.insert({ "subni9511" ,{"주수빈","시니어기초" } });
-
+	//주니어 14
 	m.insert({ "dokdo2013" ,{"조현우","주니어" } });
 	m.insert({ "sojang2000" ,{"오소정","주니어" } });
 	m.insert({ "00chrislee" ,{"이현서","주니어" } });
@@ -98,7 +109,8 @@ int main() {
 		//푼문제수 추출
 		for (int i = s.length(); i >= 0; i--) {
 			if (s[i] == '/') {
-				done = s[i - 2] - '0';
+				if (s[i - 3] != ' ') done = 10;
+				done += s[i - 2] - '0';
 				break;
 			}
 		}
