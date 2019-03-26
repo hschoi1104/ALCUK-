@@ -16,7 +16,7 @@ int seniercutline = 0, senierbasiccutline = 0, juniercutline = 0, practicetype =
 void input() {
 	cout << "과제수행인원 : ";
 	cin >> people;
-	cout << "과제 종류 입력 1. 시니어\n 2. 시니어기초\n3. 주니어\n4.대회\n";
+	cout << "과제 종류 입력\n1. 시니어\n2. 시니어기초\n3. 주니어\n4.대회\n";
 	cin >> practicetype;
 	if (practicetype == 1 || practicetype == 4) {
 		cout << "시니어 커트라인 : ";
