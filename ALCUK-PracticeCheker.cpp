@@ -3,43 +3,79 @@
 #include <vector>
 #include <string>
 using namespace std;
+struct node {
+	string name;
+	string ban;
+	int done;
+};
 vector<vector<string>> v;
-vector<string>senier;
-vector<string>senierbasic;
-vector<string>junier;
-map<string, pair<string, string>>m;
+map<string, node>m;
 int probnum = 0;
 int people = 0;
-int seniercutline = 0, senierbasiccutline = 0, juniercutline = 0;
+int seniercutline = 0, senierbasiccutline = 0, juniercutline = 0, practicetype = 0;
 int t = 0;
 string s;
 void input() {
 	cout << "과제수행인원 : ";
 	cin >> people;
-	cout << "시니어 커트라인 : ";
-	cin >> seniercutline;
-	cout << "시니어기초 커트라인 : ";
-	cin >> seniercutline;
-	cout << "주니어 커트라인 : ";
-	cin >> juniercutline;
+	cout << "과제 종류 입력 1. 시니어\n 2. 시니어기초\n3. 주니어\n4.대회\n";
+	cin >> practicetype;
+	if (practicetype == 1 || practicetype == 4) {
+		cout << "시니어 커트라인 : ";
+		cin >> seniercutline;
+	}
+	if (practicetype == 2 || practicetype == 4) {
+		cout << "시니어기초 커트라인 : ";
+		cin >> seniercutline;
+	}
+	if (practicetype == 3 || practicetype == 4) {
+		cout << "주니어 커트라인 : ";
+		cin >> juniercutline;
+	}
 	cin >> s;
 	probnum = s.length() - 10;
 }
+void output() {
+	if (practicetype == 1 || practicetype == 4) {
+		printf("======================시니어================================\n");
+		for (auto it = m.begin(); it != m.end(); it++) {
+			if (it->second.ban == "시니어" && it->second.done < seniercutline) {
+				cout << it->second.name << " " << seniercutline - it->second.done << "개 미달\n";
+			}
+		}
+	}
+	if (practicetype == 2 || practicetype == 4) {
+		printf("======================시니어기초============================\n");
+		for (auto it = m.begin(); it != m.end(); it++) {
+			if (it->second.ban == "시니어기초" && it->second.done < senierbasiccutline) {
+				cout << it->second.name << " " << senierbasiccutline - it->second.done << "개 미달\n";
+			}
+		}
+	}
+	if (practicetype == 3 || practicetype == 4) {
+		printf("======================주니어================================\n");
+		for (auto it = m.begin(); it != m.end(); it++) {
+			if (it->second.ban == "주니어" &&it->second.done < juniercutline) {
+				cout << it->second.name << " " << juniercutline - it->second.done << "개 미달\n";
+			}
+		}
+	}
+	printf("============================================================\n");
+}
 void initdata() {
-	m.insert({ "kimcoding" ,{"김정훈","시니어" } });
-	m.insert({ "gktgnjftm" ,{"이윤석","시니어" } });
-	m.insert({ "h0ng" ,{"조재홍","시니어" } });
-	m.insert({ "leethyun" ,{"이태현","시니어" } });
-	m.insert({ "antdkfa" ,{"백재상","시니어" } });
-	m.insert({ "hschoi1104" ,{"최현석","시니어" } });
-	m.insert({ "maum97" ,{"황수민","시니어" } });
-	m.insert({ "winterlood" ,{"이정환","시니어" } });
-	m.insert({ "gjdms611" ,{"허은지","시니어" } });
+	m.insert({ "kimcoding" ,{"김정훈","시니어심화" } });
+	m.insert({ "gktgnjftm" ,{"이윤석","시니어심화" } });
+	m.insert({ "h0ng" ,{"조재홍","시니어심화" } });
+	m.insert({ "leethyun" ,{"이태현","시니어심화" } });
+	m.insert({ "antdkfa" ,{"백재상","시니어심화" } });
+	m.insert({ "hschoi1104" ,{"최현석","시니어심화" } });
+	m.insert({ "maum97" ,{"황수민","시니어심화" } });
+	m.insert({ "winterlood" ,{"이정환","시니어심화" } });
+	m.insert({ "gjdms611" ,{"허은지","시니어심화" } });
 	m.insert({ "cbj2741" ,{"김기헌","시니어" } });
 	m.insert({ "ip99202" ,{"한장희","시니어" } });
 	m.insert({ "vividswan" ,{"박수환","시니어" } });
 	m.insert({ "whdauddbs" ,{"윤종명","시니어" } });
-	m.insert({ "acruxdy" ,{"김도엽","시니어" } });
 	m.insert({ "caindy" ,{"박도윤","시니어" } });
 	m.insert({ "kimdae963" ,{"김대희","시니어" } });
 	m.insert({ "fullmoon5110" ,{"이지윤","시니어" } });
@@ -98,63 +134,15 @@ int main() {
 		//푼문제수 추출
 		for (int i = s.length(); i >= 0; i--) {
 			if (s[i] == '/') {
-				done = s[i - 2] - '0';
+				if (s[i - 2] == '0') done = 10;
+				done += s[i - 2] - '0';
 				break;
 			}
 		}
 		//커트라인과 대조
-		string ban = (m.find(id)->second.second);
-		if (ban == "시니어") {
-			if (done < seniercutline) {
-				string r;
-				if (m.find(id) != m.end()) {
-					r += (m.find(id)->second.first);
-					r += " ";
-					r += seniercutline - done + '0';
-					r += "개 미달";
-					senier.push_back(r);
-				}
-			}
-		}
-		if (ban == "시니어기초") {
-			if (done < senierbasiccutline) {
-				string r;
-				if (m.find(id) != m.end()) {
-					r += (m.find(id)->second.first);
-					r += " ";
-					r += senierbasiccutline - done + '0';
-					r += "개 미달";
-					senierbasic.push_back(r);
-				}
-			}
-		}
-		if (ban == "주니어") {
-			if (done < juniercutline) {
-				string r;
-				if (m.find(id) != m.end()) {
-					r += (m.find(id)->second.first);
-					r += " ";
-					r += juniercutline - done + '0';
-					r += "개 미달";
-					junier.push_back(r);
-				}
-			}
-		}
+		m.find(id)->second.done = done;
 	}
-	printf("======================시니어================================\n");
-	cout << "시니어 과제 제출인원" << senier.size() << endl;
-	for (int i = 0; i < senier.size(); i++) {
-		cout << senier[i] << endl << endl;
-	}
-	printf("======================시니어기초============================\n");
-	for (int i = 0; i < senierbasic.size(); i++) {
-		cout << senierbasic[i] << endl << endl;
-	}
-	printf("======================주니어================================\n");
-	for (int i = 0; i < junier.size(); i++) {
-		cout << junier[i] << endl << endl;
-	}
-	printf("============================================================\n");
+	output();
 	return 0;
 }
 
