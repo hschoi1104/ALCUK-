@@ -8,13 +8,11 @@ struct node {
 	string ban;
 	int done;
 };
-vector<vector<string>> v;
 map<string, node>m;
-int probnum = 0;
-int people = 0;
-int seniercutline = 0, senierbasiccutline = 0, juniercutline = 0, practicetype = 0;
-int t = 0;
 string s;
+int probnum = 0, people = 0,t=0;
+int seniercutline = 0, senierbasiccutline = 0, juniercutline = 0, practicetype = 0;
+
 void input() {
 	cout << "과제수행인원 : ";
 	cin >> people;
@@ -109,7 +107,6 @@ void initdata() {
 }
 int main() {
 	initdata();
-	v.resize(100);
 	input();
 	//결과 입력부
 	getline(cin, s);
