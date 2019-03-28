@@ -10,7 +10,7 @@ struct node {
 };
 map<string, node>m;
 string s;
-int probnum = 0, people = 0,t=0;
+int probnum = 0, people = 0, t = 0;
 int seniercutline = 0, senierbasiccutline = 0, juniercutline = 0, practicetype = 0;
 
 void input() {
@@ -24,7 +24,7 @@ void input() {
 	}
 	if (practicetype == 2 || practicetype == 4) {
 		cout << "시니어기초 커트라인 : ";
-		cin >> seniercutline;
+		cin >> senierbasiccutline;
 	}
 	if (practicetype == 3 || practicetype == 4) {
 		cout << "주니어 커트라인 : ";
@@ -80,9 +80,8 @@ void initdata() {
 	m.insert({ "chan120317" ,{"김혜수","시니어" } });
 	m.insert({ "rabbitmjh" ,{"민지홍","시니어" } });
 	m.insert({ "spdlqjqkqh" ,{"김진경","시니어" } });
-	m.insert({ "wldbs2043" ,{"김지윤","시니어" } });
+	m.insert({ "wldbs2043" ,{"김지윤","시니어기초" } });
 	m.insert({ "lejj0106" ,{"이은진","시니어기초" } });
-	m.insert({ "wldbs2043" ,{"김지윤","시니어" } });
 	m.insert({ "vegatrash" ,{"정래광","시니어" } });
 	m.insert({ "damin8" ,{"신다민","시니어기초" } });
 	m.insert({ "sg05138" ,{"김효빈","시니어기초" } });
