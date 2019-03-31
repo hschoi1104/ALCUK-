@@ -82,7 +82,7 @@ void initdata() {
 	m.insert({ "spdlqjqkqh" ,{"김진경","시니어" } });
 	m.insert({ "wldbs2043" ,{"김지윤","시니어기초" } });
 	m.insert({ "lejj0106" ,{"이은진","시니어기초" } });
-	m.insert({ "vegatrash" ,{"정래광","시니어" } });
+	m.insert({ "vegatrash" ,{"정래광","시니어기초" } });
 	m.insert({ "damin8" ,{"신다민","시니어기초" } });
 	m.insert({ "sg05138" ,{"김효빈","시니어기초" } });
 	m.insert({ "hi2yeoni" ,{"조희연","시니어기초" } });
