@@ -53,7 +53,7 @@ void output() {
 	if (practicetype == 3 || practicetype == 4) {
 		printf("======================주니어================================\n");
 		for (auto it = m.begin(); it != m.end(); it++) {
-			if (it->second.ban == "주니어" &&it->second.done < juniercutline) {
+			if (it->second.ban == "주니어" && it->second.done < juniercutline) {
 				cout << it->second.name << " " << juniercutline - it->second.done << "개 미달\n";
 			}
 		}
@@ -68,8 +68,8 @@ void initdata() {
 	m.insert({ "antdkfa" ,{"백재상","시니어심화" } });
 	m.insert({ "hschoi1104" ,{"최현석","시니어심화" } });
 	m.insert({ "maum97" ,{"황수민","시니어심화" } });
-	m.insert({ "winterlood" ,{"이정환","시니어심화" } });
 	m.insert({ "gjdms611" ,{"허은지","시니어심화" } });
+	m.insert({ "winterlood" ,{"이정환","시니어" } });
 	m.insert({ "cbj2741" ,{"김기헌","시니어" } });
 	m.insert({ "ip99202" ,{"한장희","시니어" } });
 	m.insert({ "vividswan" ,{"박수환","시니어" } });
@@ -94,14 +94,9 @@ void initdata() {
 	m.insert({ "00chrislee" ,{"이현서","주니어" } });
 	m.insert({ "sincerelyeloise" ,{"윤지영","주니어" } });
 	m.insert({ "ssonggary" ,{"송예찬","주니어" } });
-	m.insert({ "limik1004" ,{"임익주","주니어" } });
-	m.insert({ "xogur1685" ,{"윤태혁","주니어" } });
-	m.insert({ "wnsgus821" ,{"임준현","주니어" } });
 	m.insert({ "jgk07014" ,{"김진원","주니어" } });
-	m.insert({ "jihee0602" ,{"조지희","주니어" } });
 	m.insert({ "swyr1016" ,{"선우예림","주니어" } });
 	m.insert({ "xb205" ,{"이준영","주니어" } });
-	m.insert({ "zzikbu" ,{"이승민","주니어" } });
 	m.insert({ "koaru103" ,{"장지연","주니어" } });
 }
 int main() {
