@@ -89,7 +89,6 @@ void initdata() {
 	m.insert({ "yoonfy4280" ,{"윤태수","시니어기초" } });
 	m.insert({ "subni9511" ,{"주수빈","시니어기초" } });
 
-	m.insert({ "dokdo2013" ,{"조현우","주니어" } });
 	m.insert({ "sojang2000" ,{"오소정","주니어" } });
 	m.insert({ "00chrislee" ,{"이현서","주니어" } });
 	m.insert({ "sincerelyeloise" ,{"윤지영","주니어" } });
