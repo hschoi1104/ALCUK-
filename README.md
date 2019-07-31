@@ -8,7 +8,7 @@ ALCUK 스터디 진행에 필요한 과제 수행 여부를 확인한다
 
  - cpp에서 python으로 변경. 
  - 과제 결과 페이지를 copy&paste 방식에서 python을 이용한 스크래핑 방법으로 변경
- - 구글 스프레드시트에 문제DB 생성 후 ALCUK회원들 ID정보를 읽어오고, 각 회원마다 푼 문제를 probDB에 저장.
+ - 구글 스프레드시트에 probDB 생성 후 ALCUK회원들 ID정보를 읽어오고, 각 회원마다 푼 문제를 probDB에 저장.
  - 개발중..
 
 > TODO
