@@ -1,7 +1,7 @@
 
 
 
-# ALCUK-PracticeChecker
+# ALCUK-PracticeChecker2.0
 알쿡 과제 채점프로그램
 ALCUK 스터디 진행에 필요한 과제 수행 여부를 확인한다
 
